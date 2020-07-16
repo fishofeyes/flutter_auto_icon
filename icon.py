@@ -49,7 +49,7 @@ def move(path, imgName):
     shutil.move(path + imgName, newpath)
     
 while(1):
-    outpath = raw_input('icon压缩包:')
+    outpath = raw_input('icon压缩包或者解压过后的文件夹:')
 
     if os.path.isdir(outpath):
         for parent,dirnames,filenames in os.walk(outpath):
