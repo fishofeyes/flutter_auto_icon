@@ -50,7 +50,7 @@ def move(path, imgName):
     
 while(1):
     outpath = raw_input('icon压缩包或者解压过后的文件夹:')
-
+    outpath = outpath.rstrip()
     if os.path.isdir(outpath):
         for parent,dirnames,filenames in os.walk(outpath):
             for val in filenames:
@@ -58,4 +58,4 @@ while(1):
                 move(parent+"/", val)
     else:
         # 删除右边空格
-        un_zip(outpath.rstrip()) 
+        un_zip(outpath) 
