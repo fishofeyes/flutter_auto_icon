@@ -10,6 +10,7 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 infile = raw_input("输入flutter资源目录:")
+infile = infile.rstrip()
 
 
 def un_zip(file_name):
@@ -25,6 +26,7 @@ def un_zip(file_name):
         imgs.append(names)
     
     for imgName in imgs:
+        print(imgName)
         move(file_name+"_files/", imgName)
     # 删除目录
     os.rmdir(file_name + "_files/")
@@ -56,6 +58,7 @@ while(1):
             for val in filenames:
                 print(val)
                 move(parent+"/", val)
+            os.rmdir(parent)
     else:
         # 删除右边空格
         un_zip(outpath) 
